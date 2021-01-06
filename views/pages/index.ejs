@@ -1,0 +1,46 @@
+<%- include('header.ejs') %>
+
+<main>
+    <div class="ui main container">
+        <div class="field">
+            <% if (locals.flash && locals.flash.error) { %> 
+            <div class="ui negative message">
+                <%= flash.error %> 
+            </div>
+        <% } %> 
+
+        <% if (locals.flash && locals.flash.success) { %> 
+            <div class="ui positive message">
+                <%= flash.success %> 
+            </div>
+        <% } %> 
+    <form action="/" method="post" class="ui form">
+        
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <button type="submit" class="ui blue labeled submit icon button">Envoyer
+                <i class="icon edit"></i>
+            </button>
+        </div>
+    
+    </form>
+
+    <div class="ui comments">
+        <h3 class="ui dividing header"> Commentaires </h3>
+        <% for(message of messages) { %> 
+            <div class="metadata">
+                <div class="date">
+                <%= message.created_at.fromNow() %> 
+                </div>
+            </div>
+        <div class="comment">
+            <div class="test">
+                <%= message.content %> 
+            </div>
+        </div>
+    <% } %> 
+    </div>
+</div>
+</main>
+<%- include('footer.ejs') %>
+

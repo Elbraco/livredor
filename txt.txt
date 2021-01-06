@@ -1,0 +1,15 @@
+Initialise projet : npm init.
+
+??? : npm install --save express
+
+actualise server : npm install -g nodemon
+
+install ejs : npm install --save ejs
+
+install bodyparse : npm install --save body-parser
+
+install session : npm install express-session
+
+npm install mysqljs/mysql
+
+npm install moment
